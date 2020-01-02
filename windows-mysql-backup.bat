@@ -1,0 +1,1 @@
+mysql -uroot -pYourPass -s -N -e "SHOW DATABASES" | for /F "usebackq" %%D in (`findstr /V "information_schema performance_schema"`) do mysqldump %%D -uroot -pYourPass > E:\Backup\MySQL\%%D.sql
